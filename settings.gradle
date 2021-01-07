@@ -1,0 +1,3 @@
+include ':emailsms'
+include ':app'
+rootProject.name = "EmailSmsLib"
