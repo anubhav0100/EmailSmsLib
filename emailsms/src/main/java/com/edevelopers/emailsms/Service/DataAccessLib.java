@@ -20,7 +20,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 public class DataAccessLib {
-    public static final String apiurl = "http://emailsmsservice.edevlopersolutions.in/api/emailsms/";
+    public static final String apiurl = "http://emailsmsservice.edevlopers.com/api/emailsms/";
 
     public interface Callback
     {

@@ -26,16 +26,19 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        String Email = "anubhavsingh0100@gmail.com";
+        String Email = "Email"; /****Enter Email***/
         String Apikey = "";
         String ApiSecret = "";
-        String AppName = "Test App Email";
+        String AppName = "Test App Email"; /**** Application Name***/
         OtpSendRequest.SendEmailOtp(MainActivity.this, Apikey, ApiSecret, AppName, Email, new OtpSendRequest.Callback_Otp() {
             @Override
-            public void onSuccess(ResultClas ResultOtp) {
-                Boolean b = OtpSendRequest.OtpVerification(MainActivity.this,ResultOtp.getOtp());
+            public void onSuccess(String ResultOtp) {
+
+                /****Navigate To another activity and get otp from user and verify it. ***/
+
+                Boolean b = OtpSendRequest.OtpVerification(MainActivity.this,"Get User Otp Here");
                 if(b){
-                    Toast.makeText(MainActivity.this,"Otp "+ResultOtp.getOtp(),Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this,"Verification Complete ",Toast.LENGTH_SHORT).show();
                 }
             }
 
@@ -44,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this,"Error "+Error,Toast.LENGTH_SHORT).show();
             }
         });
+
 
     }
 }

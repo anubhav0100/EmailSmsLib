@@ -12,7 +12,7 @@ public class OtpSendRequest {
 
     public interface Callback_Otp
     {
-        void onSuccess(ResultClas ResultOtp);
+        void onSuccess(String ResultOtp);
 
         void onError(String Error);
     }
@@ -23,7 +23,7 @@ public class OtpSendRequest {
         DataAccessLib.RequestOtp(model, new DataAccessLib.Callback() {
             @Override
             public void onSuccess(ResultClas Result) {
-                otp.onSuccess(Result);
+                otp.onSuccess("Success");
             }
 
             @Override
@@ -39,7 +39,7 @@ public class OtpSendRequest {
         DataAccessLib.RequestOtp(model, new DataAccessLib.Callback() {
             @Override
             public void onSuccess(ResultClas Result) {
-                otp.onSuccess(Result);
+                otp.onSuccess("Success");
             }
 
             @Override
